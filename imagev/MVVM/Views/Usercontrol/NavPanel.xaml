@@ -1,0 +1,137 @@
+﻿<UserControl x:Class="imagev.MVVM.Views.Usercontrol.NavPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:imagev.MVVM.Views.Usercontrol"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="300">
+
+
+
+    <Grid Style="{StaticResource NavOnGridStyle}" >
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Button 
+            Content="{materialDesign:PackIcon Menu }"
+            materialDesign:ButtonAssist.CornerRadius="0"
+           
+            
+           IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+            ToolTip="Files" Click="MenuClick" Margin="0,22,0,21"/>
+
+
+        <Button Grid.Row="1" Click="GoToAllNav"
+                materialDesign:ButtonAssist.CornerRadius="0"
+     
+    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+     ToolTip="Files" Margin="0,21,0,22">
+            <StackPanel Orientation="Horizontal "  >
+                <materialDesign:PackIcon Kind="Image" Width="24" Height="24" Margin="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Style="{StaticResource NavOnTextBoxStyle}"
+            VerticalAlignment="Center "
+                FontSize="20"
+                Text="All Photos"
+            />
+
+
+            </StackPanel>
+
+        </Button>
+        <Button Grid.Row="2" Click="GoDownloadnav"
+                materialDesign:ButtonAssist.CornerRadius="0"
+     
+    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+     ToolTip="Files" Margin="0,22,0,21">
+            <StackPanel Orientation="Horizontal ">
+                <materialDesign:PackIcon Kind="Download" Width="24" Height="24" Margin="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Style="{StaticResource NavOnTextBoxStyle}"
+            VerticalAlignment="Center "
+            FontSize="20"
+            Text="Send Images"
+            />
+
+
+            </StackPanel>
+        </Button>
+
+
+        <Button Grid.Row="3" Click="GoDrivenav"
+                materialDesign:ButtonAssist.CornerRadius="0"
+     
+    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+     ToolTip="Files" Margin="0,21,0,22">
+            <StackPanel Orientation="Horizontal ">
+                <materialDesign:PackIcon Kind="ImageFilterDramaOutline" Width="24" Height="24" Margin="4,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Style="{StaticResource NavOnTextBoxStyle}"
+                VerticalAlignment="Center "
+                FontSize="20"
+                Text="One Drive"
+                  />
+
+
+            </StackPanel>
+        </Button>
+
+
+        <Button Grid.Row="4" Click="GoFavouritesnav"
+                materialDesign:ButtonAssist.CornerRadius="0"
+     
+    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+     ToolTip="Files" Margin="0,22,0,21">
+            <StackPanel Orientation="Horizontal ">
+                <materialDesign:PackIcon Kind="CardsHeartOutline" Width="24" Height="24" Margin="4,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Style="{StaticResource NavOnTextBoxStyle}"
+    VerticalAlignment="Center "
+    FontSize="20"
+    Text="Favorites"
+      />
+
+
+            </StackPanel>
+        </Button>
+        <Button Grid.Row="5" Click="GoFoldernav"
+                materialDesign:ButtonAssist.CornerRadius="0"
+ 
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+            ToolTip="Files" Margin="0,21,0,22" Grid.RowSpan="2">
+            <StackPanel Orientation="Horizontal ">
+                <materialDesign:PackIcon Kind="FolderMultipleImage" Width="24" Height="24" Margin="4,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Style="{StaticResource NavOnTextBoxStyle}"
+                VerticalAlignment="Center "
+                FontSize="20"
+                Text="Folders"
+                    />
+
+
+            </StackPanel>
+        </Button>
+
+
+
+
+
+
+
+
+
+
+
+
+    </Grid>
+</UserControl>

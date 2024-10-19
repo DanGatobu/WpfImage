@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="imagev.MVVM.Views.Usercontrol.Maingallary"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:imagev.MVVM.Views.Usercontrol"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+       
+       
+    </UserControl.Resources>
+    <Grid>
+        <ListView Name="MainImageBox">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Rectangle x:Name="Top_fill">
+                            <Rectangle.Fill>
+                                <SolidColorBrush x:Name="Target_box" Color="Transparent"/>
+                            </Rectangle.Fill>
+
+                            <Rectangle.Triggers>
+                                <EventTrigger RoutedEvent="MouseEnter">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="Target_box"
+                                                             Storyboard.TargetProperty="Color" 
+                                                                                    From="Transparent"
+                                                             To="DarkGray" Duration="0:0:0.2"/>
+                                           
+                                        </Storyboard>
+                                    </BeginStoryboard>
+
+
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="MouseLeave">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="Target_box"
+                                                         Storyboard.TargetProperty="Color" 
+                                                         To="Transparent" From="DarkGray" Duration="0:0:0.2"/>
+                                           
+
+                                        </Storyboard>
+                                    </BeginStoryboard>
+
+                                </EventTrigger>
+
+                            </Rectangle.Triggers>
+                            
+                        </Rectangle>
+                        
+                        <Image Height="100" Width="150" Source="{Binding}"/>
+                        <CheckBox Style="{StaticResource Check_boxx}"/>
+
+
+                    </Grid>
+                   
+
+                </DataTemplate>
+                
+                
+               
+            </ListView.ItemTemplate>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                       
+                    </Style.Triggers>
+
+                </Style>
+
+            </ListView.ItemContainerStyle>
+            
+        </ListView>
+
+
+
+    </Grid>
+</UserControl>

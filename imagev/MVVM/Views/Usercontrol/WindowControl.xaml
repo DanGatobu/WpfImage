@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="imagev.MVVM.Views.Usercontrol.WindowControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:imagev.MVVM.Views.Usercontrol"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="200">
+    <Grid Margin="0,0,0,0">
+        <Grid Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+
+            </Grid.ColumnDefinitions>
+
+            <Button
+                Grid.Column="1"
+                 Content="{materialDesign:PackIcon Minus }"
+                materialDesign:ElevationAssist.Elevation="Dp0"
+                x:Name="minizebtm"
+                  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 ToolTip="Icon"
+                 Width="50"
+                Click="MinimizeButton_Click"
+                materialDesign:ButtonAssist.CornerRadius="0"
+                
+     
+     
+            />
+
+            <Button 
+                
+                Grid.Column="3"
+                     Content="{materialDesign:PackIcon Close }"
+                materialDesign:ElevationAssist.Elevation="Dp0"
+                      IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                     ToolTip="Icon"
+                     Width="50"
+                    x:Name="closeBtn" HorizontalAlignment="Right" 
+                 Click="CloseButton_Click"
+                materialDesign:ButtonAssist.CornerRadius="0"
+                    
+     
+     
+                />
+
+            <Button
+                 
+                   
+                 Content="{materialDesign:PackIcon CogOutline }"
+                  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                 ToolTip="Icon"
+                materialDesign:ButtonAssist.CornerRadius="0"
+                 Width="50"
+                materialDesign:ElevationAssist.Elevation="Dp0"
+                
+               
+     
+     
+            />
+
+
+
+            <Button Grid.Column="2"
+                
+                    materialDesign:ElevationAssist.Elevation="Dp0"
+                 IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                ToolTip="Icon"
+                    x:Name="maximizeBtn"
+                    Click="MaximizeButton_Click"
+                    materialDesign:ButtonAssist.CornerRadius="0"
+                Width="50"
+                
+                
+           >
+                <materialDesign:PackIcon x:Name="Icon" Kind="CardMultipleOutline" />
+            </Button>
+
+
+        </Grid>
+
+
+    </Grid>
+</UserControl>

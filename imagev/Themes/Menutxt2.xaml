@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ControlTemplate TargetType="{x:Type ToggleButton}" x:Key="tgb_Ctrl">
+        <Border Background="{TemplateBinding Background}"
+x:Name="border"
+BorderThickness="{TemplateBinding BorderThickness}"
+SnapsToDevicePixels="True">
+
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" TargetName="border" Value="red">
+
+                </Setter>
+               
+                <Setter Property="BorderBrush" TargetName="border" Value="purple">
+
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" TargetName="border" Value="green">
+
+                </Setter>
+                <Setter Property="BorderBrush" TargetName="border" Value="blue">
+
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+
+    </ControlTemplate>
+
+
+</ResourceDictionary>

@@ -1,0 +1,338 @@
+﻿<UserControl x:Class="imagev.MVVM.Views.Usercontrol.TopGallary"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:imagev.MVVM.Views.Usercontrol"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="800">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                
+
+            </Grid.ColumnDefinitions>
+            <Button Content="{materialDesign:PackIcon Kind=Image}" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+ToolTip="Badge it up!" />
+            <ListBox  IsHitTestVisible="False" Grid.Column="1">
+                <ListBoxItem
+ToolTip="Images available">
+                    <TextBlock Text="ALL IMAGES" />
+                </ListBoxItem>
+            </ListBox>
+
+
+
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="{materialDesign:PackIcon Kind=Youtube}" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" ToolTip="Badge it up!" />
+            <materialDesign:PopupBox Style="{DynamicResource MaterialDesignPopupBoxButton}" PopupElevation="Dp4" PopupUniformCornerRadius="4" PopupHorizontalOffset="4"
+                          PopupVerticalOffset="4" PlacementMode="LeftAndAlignMiddles" x:Name="SortSelect" Grid.Column="1">
+                <materialDesign:PopupBox.ToggleContent>
+                    <materialDesign:PackIcon Kind="Sort"/>
+                </materialDesign:PopupBox.ToggleContent>
+                <materialDesign:PopupBox.PopupContent>
+                  
+         <Grid>
+             <ListBox materialDesign:ListBoxItemAssist.ShowSelection="False">
+                 <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" ToolTip="Files">
+                     <StackPanel Orientation="Horizontal "  >
+                         <materialDesign:PackIcon Kind="SelectAll" Width="24" Height="24" Margin="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                         <TextBlock Style="{StaticResource NavOnTextBoxStyle}" VerticalAlignment="Center " FontSize="20" Text="Select All"/>
+                     </StackPanel>
+
+                 </Button>
+                 <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" ToolTip="Files">
+                     <StackPanel Orientation="Horizontal "  >
+                         <materialDesign:PackIcon Kind="AlphaX" Width="24" Height="24" Margin="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                         <TextBlock Style="{StaticResource NavOnTextBoxStyle}" VerticalAlignment="Center " FontSize="20" Text="Select None"/>
+                     </StackPanel>
+
+                 </Button>
+
+             </ListBox>
+
+         </Grid>
+     </materialDesign:PopupBox.PopupContent>
+
+ </materialDesign:PopupBox>
+            <materialDesign:PopupBox Style="{DynamicResource MaterialDesignPopupBoxButton}" PopupElevation="Dp4" PopupUniformCornerRadius="4" PopupHorizontalOffset="4"
+PopupVerticalOffset="4" PlacementMode="LeftAndAlignMiddles" x:Name="FilterSelect" Grid.Column="2" >
+                <materialDesign:PopupBox.ToggleContent>
+                    <materialDesign:PackIcon Kind="FilterMenuOutline"/>
+                </materialDesign:PopupBox.ToggleContent>
+                <materialDesign:PopupBox.PopupContent>
+                
+                               <Grid>
+                                   <ListBox materialDesign:ListBoxItemAssist.ShowSelection="False">
+                                       <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" ToolTip="Files">
+                                           <StackPanel Orientation="Horizontal "  >
+                                               <materialDesign:PackIcon Kind="SelectAll" Width="24" Height="24" Margin="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                               <TextBlock Style="{StaticResource NavOnTextBoxStyle}" VerticalAlignment="Center " FontSize="20" Text="Select All"/>
+                                           </StackPanel>
+
+                                       </Button>
+                                       <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" ToolTip="Files">
+                                           <StackPanel Orientation="Horizontal "  >
+                                               <materialDesign:PackIcon Kind="AlphaX" Width="24" Height="24" Margin="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                               <TextBlock Style="{StaticResource NavOnTextBoxStyle}" VerticalAlignment="Center " FontSize="20" Text="Select None"/>
+                                           </StackPanel>
+
+                                       </Button>
+
+                                   </ListBox>
+
+                               </Grid>
+                           </materialDesign:PopupBox.PopupContent>
+
+                       </materialDesign:PopupBox>
+                  
+                       <materialDesign:PopupBox Style="{DynamicResource MaterialDesignPopupBoxButton}" PopupElevation="Dp4" PopupUniformCornerRadius="4" PopupHorizontalOffset="4"
+                        PopupVerticalOffset="4" PlacementMode="LeftAndAlignMiddles" x:Name="Gridselect" Grid.Column="3" >
+                           <materialDesign:PopupBox.ToggleContent>
+                               <materialDesign:PackIcon Kind="ViewGridOutline"/>
+                           </materialDesign:PopupBox.ToggleContent>
+                           <materialDesign:PopupBox.PopupContent>
+                           
+                               <Grid>
+                                   <ListBox materialDesign:ListBoxItemAssist.ShowSelection="False">
+                                       <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" ToolTip="Files">
+                                           <StackPanel Orientation="Horizontal "  >
+                                               <materialDesign:PackIcon Kind="SelectAll" Width="24" Height="24" Margin="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                               <TextBlock Style="{StaticResource NavOnTextBoxStyle}" VerticalAlignment="Center " FontSize="20" Text="Select All"/>
+                                           </StackPanel>
+
+                                       </Button>
+                                       <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" ToolTip="Files">
+                                           <StackPanel Orientation="Horizontal "  >
+                                               <materialDesign:PackIcon Kind="AlphaX" Width="24" Height="24" Margin="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                               <TextBlock Style="{StaticResource NavOnTextBoxStyle}" VerticalAlignment="Center " FontSize="20" Text="Select None"/>
+                                           </StackPanel>
+
+                                       </Button>
+
+                                   </ListBox>
+
+                               </Grid>
+                           </materialDesign:PopupBox.PopupContent>
+
+                       </materialDesign:PopupBox>
+
+                       <materialDesign:PopupBox Style="{DynamicResource MaterialDesignPopupBoxButton}" PopupElevation="Dp4" PopupUniformCornerRadius="4" PopupHorizontalOffset="4"
+PopupVerticalOffset="4" PlacementMode="LeftAndAlignMiddles" x:Name="SelectAll" Grid.Column="4" >
+                           <materialDesign:PopupBox.ToggleContent>
+                               <materialDesign:PackIcon Kind="DotsVertical"/>
+                           </materialDesign:PopupBox.ToggleContent>
+                           <materialDesign:PopupBox.PopupContent>
+                  
+                               <Grid>
+                                   <ListBox materialDesign:ListBoxItemAssist.ShowSelection="False">
+                                       <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" ToolTip="Files">
+                                           <StackPanel Orientation="Horizontal "  >
+                                               <materialDesign:PackIcon Kind="SelectAll" Width="24" Height="24" Margin="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                               <TextBlock Style="{StaticResource NavOnTextBoxStyle}" VerticalAlignment="Center " FontSize="20" Text="Select All"/>
+                                           </StackPanel>
+
+                                       </Button>
+                                       <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" ToolTip="Files">
+                                           <StackPanel Orientation="Horizontal "  >
+                                               <materialDesign:PackIcon Kind="AlphaX" Width="24" Height="24" Margin="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                               <TextBlock Style="{StaticResource NavOnTextBoxStyle}" VerticalAlignment="Center " FontSize="20" Text="Select None"/>
+                                           </StackPanel>
+
+                                       </Button>
+
+                                   </ListBox>
+
+                               </Grid>
+                           </materialDesign:PopupBox.PopupContent>
+
+                       </materialDesign:PopupBox>
+
+
+        </Grid>
+       
+        
+        <!--<ToolBarTray 
+ >
+            <ToolBar
+    ClipToBounds="True"
+    Style="{StaticResource MaterialDesignToolBar}">
+
+                
+                    <Button
+        Content="{materialDesign:PackIcon Kind=Image}"
+        Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+        ToolTip="Badge it up!" />
+                <ListBox  IsHitTestVisible="False">
+                    <ListBoxItem
+ToolTip="Images available">
+                        <TextBlock
+  Text="ALL IMAGES                                   " />
+                    </ListBoxItem>
+                </ListBox>
+                <ListBox  IsHitTestVisible="False" Focusable="False" SelectedIndex="0">
+                    <ListBox.ToolTip>
+                        <StackPanel>
+                            <TextBlock
+            Text="MaterialDesignToolToggleFlatListBox" />
+                            <TextBlock
+            Text="Exclusive selection" />
+                            <TextBlock
+            Text="ListBoxAssist.IsToggle allows more natural toggle behaviour" />
+                        </StackPanel>
+                    </ListBox.ToolTip>
+                    <ListBoxItem
+        Content="{materialDesign:PackIcon Kind=Youtube}" />
+                    <ListBoxItem  >
+                        <materialDesign:PopupBox Style="{DynamicResource MaterialDesignPopupBoxButton}" PopupElevation="Dp4" PopupUniformCornerRadius="4" PopupHorizontalOffset="4"
+                                                 PopupVerticalOffset="4" PlacementMode="LeftAndAlignMiddles" x:Name="SortSelect">
+                            <materialDesign:PopupBox.ToggleContent>
+                                <materialDesign:PackIcon Kind="Sort"/>
+                            </materialDesign:PopupBox.ToggleContent>
+                            <materialDesign:PopupBox.PopupContent>
+                                --><!-- Define your Popup content here --><!--
+                                <Grid>
+                                    <ListBox materialDesign:ListBoxItemAssist.ShowSelection="False">
+                                        <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" ToolTip="Files">
+                                            <StackPanel Orientation="Horizontal "  >
+                                                <materialDesign:PackIcon Kind="SelectAll" Width="24" Height="24" Margin="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                                <TextBlock Style="{StaticResource NavOnTextBoxStyle}" VerticalAlignment="Center " FontSize="20" Text="Select All"/>
+                                            </StackPanel>
+
+                                        </Button>
+                                        <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" ToolTip="Files">
+                                            <StackPanel Orientation="Horizontal "  >
+                                                <materialDesign:PackIcon Kind="AlphaX" Width="24" Height="24" Margin="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                                <TextBlock Style="{StaticResource NavOnTextBoxStyle}" VerticalAlignment="Center " FontSize="20" Text="Select None"/>
+                                            </StackPanel>
+
+                                        </Button>
+
+                                    </ListBox>
+
+                                </Grid>
+                            </materialDesign:PopupBox.PopupContent>
+
+                        </materialDesign:PopupBox>
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <materialDesign:PopupBox Style="{DynamicResource MaterialDesignPopupBoxButton}" PopupElevation="Dp4" PopupUniformCornerRadius="4" PopupHorizontalOffset="4"
+ PopupVerticalOffset="4" PlacementMode="LeftAndAlignMiddles" x:Name="FilterSelect" >
+                            <materialDesign:PopupBox.ToggleContent>
+                                <materialDesign:PackIcon Kind="FilterMenuOutline"/>
+                            </materialDesign:PopupBox.ToggleContent>
+                            <materialDesign:PopupBox.PopupContent>
+                                --><!-- Define your Popup content here --><!--
+                                <Grid>
+                                    <ListBox materialDesign:ListBoxItemAssist.ShowSelection="False">
+                                        <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" ToolTip="Files">
+                                            <StackPanel Orientation="Horizontal "  >
+                                                <materialDesign:PackIcon Kind="SelectAll" Width="24" Height="24" Margin="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                                <TextBlock Style="{StaticResource NavOnTextBoxStyle}" VerticalAlignment="Center " FontSize="20" Text="Select All"/>
+                                            </StackPanel>
+
+                                        </Button>
+                                        <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" ToolTip="Files">
+                                            <StackPanel Orientation="Horizontal "  >
+                                                <materialDesign:PackIcon Kind="AlphaX" Width="24" Height="24" Margin="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                                <TextBlock Style="{StaticResource NavOnTextBoxStyle}" VerticalAlignment="Center " FontSize="20" Text="Select None"/>
+                                            </StackPanel>
+
+                                        </Button>
+
+                                    </ListBox>
+
+                                </Grid>
+                            </materialDesign:PopupBox.PopupContent>
+
+                        </materialDesign:PopupBox>
+                    </ListBoxItem>
+                    <ListBoxItem  >
+                        <materialDesign:PopupBox Style="{DynamicResource MaterialDesignPopupBoxButton}" PopupElevation="Dp4" PopupUniformCornerRadius="4" PopupHorizontalOffset="4"
+                         PopupVerticalOffset="4" PlacementMode="LeftAndAlignMiddles" x:Name="Gridselect" >
+                            <materialDesign:PopupBox.ToggleContent>
+                                <materialDesign:PackIcon Kind="ViewGridOutline"/>
+                            </materialDesign:PopupBox.ToggleContent>
+                            <materialDesign:PopupBox.PopupContent>
+                                --><!-- Define your Popup content here --><!--
+                                <Grid>
+                                    <ListBox materialDesign:ListBoxItemAssist.ShowSelection="False">
+                                        <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" ToolTip="Files">
+                                            <StackPanel Orientation="Horizontal "  >
+                                                <materialDesign:PackIcon Kind="SelectAll" Width="24" Height="24" Margin="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                                <TextBlock Style="{StaticResource NavOnTextBoxStyle}" VerticalAlignment="Center " FontSize="20" Text="Select All"/>
+                                            </StackPanel>
+
+                                        </Button>
+                                        <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" ToolTip="Files">
+                                            <StackPanel Orientation="Horizontal "  >
+                                                <materialDesign:PackIcon Kind="AlphaX" Width="24" Height="24" Margin="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                                <TextBlock Style="{StaticResource NavOnTextBoxStyle}" VerticalAlignment="Center " FontSize="20" Text="Select None"/>
+                                            </StackPanel>
+
+                                        </Button>
+
+                                    </ListBox>
+
+                                </Grid>
+                            </materialDesign:PopupBox.PopupContent>
+
+                        </materialDesign:PopupBox>
+
+                    </ListBoxItem>
+                    <ListBoxItem>
+                        <materialDesign:PopupBox Style="{DynamicResource MaterialDesignPopupBoxButton}" PopupElevation="Dp4" PopupUniformCornerRadius="4" PopupHorizontalOffset="4"
+ PopupVerticalOffset="4" PlacementMode="LeftAndAlignMiddles" x:Name="SelectAll" >
+                            <materialDesign:PopupBox.ToggleContent>
+                                <materialDesign:PackIcon Kind="DotsVertical"/>
+                            </materialDesign:PopupBox.ToggleContent>
+                            <materialDesign:PopupBox.PopupContent>
+                                --><!-- Define your Popup content here --><!--
+                                <Grid>
+                                    <ListBox materialDesign:ListBoxItemAssist.ShowSelection="False">
+                                        <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" ToolTip="Files">
+                                            <StackPanel Orientation="Horizontal "  >
+                                                <materialDesign:PackIcon Kind="SelectAll" Width="24" Height="24" Margin="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                                <TextBlock Style="{StaticResource NavOnTextBoxStyle}" VerticalAlignment="Center " FontSize="20" Text="Select All"/>
+                                            </StackPanel>
+
+                                        </Button>
+                                        <Button IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" ToolTip="Files">
+                                            <StackPanel Orientation="Horizontal "  >
+                                                <materialDesign:PackIcon Kind="AlphaX" Width="24" Height="24" Margin="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                                <TextBlock Style="{StaticResource NavOnTextBoxStyle}" VerticalAlignment="Center " FontSize="20" Text="Select None"/>
+                                            </StackPanel>
+
+                                        </Button>
+
+                                    </ListBox>
+
+                                </Grid>
+                            </materialDesign:PopupBox.PopupContent>
+
+                        </materialDesign:PopupBox>
+
+
+                    </ListBoxItem>
+                </ListBox>
+            </ToolBar>
+        </ToolBarTray>-->
+
+    </Grid>
+</UserControl>
